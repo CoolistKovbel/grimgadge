@@ -36,14 +36,11 @@ const AuthUserModel = () => {
         username: fm,
       };
 
-      const gg = await login(JSON.stringify(payload));
-      console.log(gg);
+      // const gg = await login(JSON.stringify(payload));
+      console.log(payload);
 
       router.refresh();
 
-      if (gg.status === "success") {
-        router.push("/profile");
-      }
 
       onClose();
     } catch (error) {

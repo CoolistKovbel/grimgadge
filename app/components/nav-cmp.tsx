@@ -6,7 +6,7 @@ import { useModal } from "../hooks/use-modal-store";
 
 const NavCmp = () => {
   const [open, setOpen] = useState(false);
-  const {onOpen} = useModal()
+  const { onOpen } = useModal()
   const isLogged = false;
 
   const handleClickFi = async () => {
