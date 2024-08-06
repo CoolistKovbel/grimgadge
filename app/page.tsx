@@ -1,4 +1,3 @@
-import { toast } from "react-toastify";
 import NavCmp from "./components/nav-cmp";
 
 export default async function Home() {
@@ -7,17 +6,19 @@ export default async function Home() {
   // Setup connection
   const getEtherAccount = async () => {
     try {
-      toast("account connecteddd")
+      console.log("get account")
 
 
 
 
-      
     } catch (error) {
-      toast("eroorr no ceonntionss")
+      console.log("error", error)
     }
   }
 
+
+  const gg = await getEtherAccount()
+  console.log(gg, "woooofoff")
 
   return (
     // app

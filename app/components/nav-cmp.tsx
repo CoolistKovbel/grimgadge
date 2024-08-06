@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { registerUser } from "../lib/action";
+import { useModal } from "../hooks/use-modal-store";
 
 const NavCmp = () => {
   const [open, setOpen] = useState(false);
+  const {onOpen} = useModal()
   const isLogged = false;
 
   const handleClickFi = async () => {
@@ -35,6 +37,16 @@ const NavCmp = () => {
     }
   };
 
+
+  const handeLogin = async () => {
+    try {
+      onOpen("AuthUser")
+    } catch (error) {
+      console.log("error", error)
+    }
+  }
+
+
   return (
     <nav
       id="navItem"
@@ -51,6 +63,7 @@ const NavCmp = () => {
       {open && (
         <div className="absolute w-[300px] h-[250px] p-4 bg-[#424] drop-shadow-lg -top-[250px] left-0 flex justify-between item-center flex-col gap-4">
           <h2 className="text-2xl font-bold">GrimGadge ⌚️</h2>
+         
           <form onSubmit={handleSunmit}>
             <div className="p-4 bg-[#626] flex items-center flex-col gap-4">
               <label className="flex items-center justify-between w-full">
@@ -74,10 +87,14 @@ const NavCmp = () => {
                 />
               </label>
             </div>
+            <div>
+            <button onClick={handeLogin}>Login</button>
             <button className="w-full p-1 pr-4  bg-[#466] font-bold uppercase text-right">
               submit
             </button>
+            </div>
           </form>
+
         </div>
       )}
 

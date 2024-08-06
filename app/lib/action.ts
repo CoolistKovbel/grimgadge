@@ -40,6 +40,8 @@ export const registerUser = async (formData: FormData) => {
     console.log(data);
     // Finish register...
 
+    
+
     return {
       status: "success",
       payload: "you suck",

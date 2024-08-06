@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ModalProvider } from "./providers/model-provider";
 
 export const metadata: Metadata = {
   title: "grimgadge",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <ToastContainer />
+        <ModalProvider />
         </body>
     </html>
   );
